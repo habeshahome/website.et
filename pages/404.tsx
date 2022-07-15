@@ -1,6 +1,6 @@
 import React from 'react';
 //import Logo from '../../shared/common/Logo'
-import Hero from '../@website/shared/components/hero/Hero'
+import Hero from '../public/@website/shared/components/hero/Hero'
 import { useState, useEffect } from "react";
 import axios from "axios";
 
