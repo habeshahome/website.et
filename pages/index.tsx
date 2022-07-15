@@ -19,10 +19,6 @@ const Home: NextPage = () => {
           Welcome to <Link href="/">website.et!</Link> <br/>
         </h1>
 
-        <p className={styles.description}>
-           Select Service{' '}
-        </p>
-
         <div className={styles.grid}>
           
         </div>
