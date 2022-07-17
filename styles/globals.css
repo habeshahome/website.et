@@ -18,3 +18,33 @@ a {
 * {
   box-sizing: border-box;
 }
+@layer base{
+
+  h1 {
+    @apply text-5xl font-bold;
+  }
+  h2 {
+    @apply text-3xl font-medium;
+  }
+  h3 {
+    @apply text-2xl font-normal;
+  }
+  h4 {
+    @apply text-lg font-normal;
+  }
+}
+@layer components {
+
+  .title {
+    @apply text-7xl font-bold tracking-wide opacity-90;
+  }
+  .subtitle {
+    @apply text-2xl tracking-wide opacity-70;
+  }
+  .normal {
+    @apply text-lg tracking-wide;
+  }
+  .caption {
+    @apply text-xl;
+  }
+}
