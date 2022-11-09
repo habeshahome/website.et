@@ -4,6 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: difference;
+  background-position: center;
   background-origin: content-box;
 }
 
