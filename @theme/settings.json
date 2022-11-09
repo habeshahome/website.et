@@ -1,0 +1,199 @@
+// this is example theme setting file from @fusetheme
+{
+  "customScrollbars": true, 
+  "direction": "ltr",
+  "theme": {
+    "main": {
+      "palette": {
+        "mode": "light",
+        "text": {
+          "primary": "rgb(17, 24, 39)",
+          "secondary": "rgb(107, 114, 128)",
+          "disabled": "rgb(149, 156, 169)"
+        },
+        "common": {
+          "black": "rgb(17, 24, 39)",
+          "white": "rgb(255, 255, 255)"
+        },
+        "primary": {
+          "light": "#64748b",
+          "main": "#1e293b",
+          "dark": "#0f172a",
+          "contrastDefaultColor": "light",
+          "contrastText": "rgb(255,255,255)"
+        },
+        "secondary": {
+          "light": "#818cf8",
+          "main": "#4f46e5",
+          "dark": "#3730a3",
+          "contrastText": "rgb(255,255,255)"
+        },
+        "background": {
+          "paper": "#FFFFFF",
+          "default": "#f1f5f9"
+        },
+        "error": {
+          "light": "#ffcdd2",
+          "main": "#f44336",
+          "dark": "#b71c1c"
+        },
+        "divider": "#e2e8f0"
+      },
+      "status": {
+        "danger": "orange"
+      }
+    },
+    "navbar": {
+      "palette": {
+        "mode": "dark",
+        "text": {
+          "primary": "rgb(255,255,255)",
+          "secondary": "rgb(148, 163, 184)",
+          "disabled": "rgb(156, 163, 175)"
+        },
+        "common": {
+          "black": "rgb(17, 24, 39)",
+          "white": "rgb(255, 255, 255)"
+        },
+        "primary": {
+          "light": "#64748b",
+          "main": "#334155",
+          "dark": "#0f172a",
+          "contrastDefaultColor": "light",
+          "contrastText": "rgb(255,255,255)"
+        },
+        "secondary": {
+          "light": "#818cf8",
+          "main": "#4f46e5",
+          "dark": "#3730a3",
+          "contrastText": "rgb(255,255,255)"
+        },
+        "background": {
+          "paper": "#1e293b",
+          "default": "#111827"
+        },
+        "error": {
+          "light": "#ffcdd2",
+          "main": "#f44336",
+          "dark": "#b71c1c"
+        },
+        "divider": "rgba(241,245,249,.12)",
+        "status": {
+          "danger": "orange"
+        }
+      }
+    },
+    "toolbar": {
+      "palette": {
+        "mode": "light",
+        "text": {
+          "primary": "rgb(17, 24, 39)",
+          "secondary": "rgb(107, 114, 128)",
+          "disabled": "rgb(149, 156, 169)"
+        },
+        "common": {
+          "black": "rgb(17, 24, 39)",
+          "white": "rgb(255, 255, 255)"
+        },
+        "primary": {
+          "light": "#64748b",
+          "main": "#1e293b",
+          "dark": "#0f172a",
+          "contrastDefaultColor": "light",
+          "contrastText": "rgb(255,255,255)"
+        },
+        "secondary": {
+          "light": "#818cf8",
+          "main": "#4f46e5",
+          "dark": "#3730a3",
+          "contrastText": "rgb(255,255,255)"
+        },
+        "background": {
+          "paper": "#FFFFFF",
+          "default": "#f1f5f9"
+        },
+        "error": {
+          "light": "#ffcdd2",
+          "main": "#f44336",
+          "dark": "#b71c1c"
+        },
+        "divider": "#e2e8f0"
+      },
+      "status": {
+        "danger": "orange"
+      }
+    },
+    "footer": {
+      "palette": {
+        "mode": "dark",
+        "text": {
+          "primary": "rgb(255,255,255)",
+          "secondary": "rgb(148, 163, 184)",
+          "disabled": "rgb(156, 163, 175)"
+        },
+        "common": {
+          "black": "rgb(17, 24, 39)",
+          "white": "rgb(255, 255, 255)"
+        },
+        "primary": {
+          "light": "#64748b",
+          "main": "#334155",
+          "dark": "#0f172a",
+          "contrastDefaultColor": "light",
+          "contrastText": "rgb(255,255,255)"
+        },
+        "secondary": {
+          "light": "#818cf8",
+          "main": "#4f46e5",
+          "dark": "#3730a3",
+          "contrastText": "rgb(255,255,255)"
+        },
+        "background": {
+          "paper": "#1e293b",
+          "default": "#111827"
+        },
+        "error": {
+          "light": "#ffcdd2",
+          "main": "#f44336",
+          "dark": "#b71c1c"
+        },
+        "divider": "rgba(241,245,249,.12)",
+        "status": {
+          "danger": "orange"
+        }
+      }
+    }
+  },
+  "layout": {
+    "style": "layout1",
+    "config": {
+      "mode": "container",
+      "containerWidth": 1570,
+      "navbar": {
+        "display": true,
+        "style": "style-3-dense",
+        "folded": true,
+        "position": "left"
+      },
+      "toolbar": {
+        "display": true,
+        "style": "static"
+      },
+      "footer": {
+        "display": true,
+        "style": "fixed"
+      },
+      "leftSidePanel": {
+        "display": true
+      },
+      "rightSidePanel": {
+        "display": true
+      }
+    }
+  },
+  "defaultAuth": [
+    "admin"
+  ],
+  "loginRedirectUrl": "/"
+}
+  
