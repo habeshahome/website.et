@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1> Welcome to website.et </h1>
+        <h1> Create Your Website | Ethiopian Website Builder | Website.et </h1>
       </main>
 
       <footer className={styles.footer}>
