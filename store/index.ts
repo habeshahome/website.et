@@ -1,23 +1,28 @@
-import { atom } from "recoil";
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { atom } from 'recoil'
+
+const auth = atom({
+  key: 'auth',
+  default: {}
+})
 
 const brand = atom({
   key: 'brand',
   default: 'website.et'
 })
 
-const page_title = atom({
-  key: 'page_title',
+const pageTitle = atom({
+  key: 'pageTitle',
   default: 'website.et'
 })
 
-const active_theme = atom({
-  key: 'active_theme',
+const activeTheme = atom({
+  key: 'activeTheme',
   default: 'dark'
 })
 
-const theme_settings = atom({
-  key: 'theme_settings',
-  default: {
-    
-  }
+const themeSettings = atom({
+  key: 'themeSettings',
+  default: {}
 })

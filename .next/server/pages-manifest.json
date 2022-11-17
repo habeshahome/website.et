@@ -1,8 +1,20 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/api/hello": "pages/api/hello.js",
-  "/": "pages/index.html",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
+  "/404": "pages/404.html",
+  "/_error": "pages/_error.js",
+  "/_offline": "pages/_offline.html",
+  "/account/register": "pages/account/register.html",
+  "/account/signin": "pages/account/signin.html",
+  "/account/signout": "pages/account/signout.html",
+  "/api/hello": "pages/api/hello.js",
+  "/contact": "pages/contact.html",
+  "/digital_marketing": "pages/digital_marketing.html",
+  "/": "pages/index.html",
+  "/learn": "pages/learn.html",
+  "/online_shop": "pages/online_shop.html",
+  "/pricing": "pages/pricing.html",
+  "/support": "pages/support.html",
+  "/templates": "pages/templates.html",
+  "/website": "pages/website.html"
 }

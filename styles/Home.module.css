@@ -1,15 +1,15 @@
 .container {
   padding: 0 2rem;
-  background-image: url('/img/log-in-girl.svg');
+  /* background-image: url('/img/log-in-girl.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: difference;
   background-position: center;
-  background-origin: content-box;
+  background-origin: content-box; */
 }
 
 .main {
-  min-height: 100vh;
+  min-height: '100vh';
   padding: 4rem 0;
   flex: 1;
   display: flex;
