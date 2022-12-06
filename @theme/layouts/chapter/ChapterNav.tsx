@@ -4,17 +4,21 @@ import Link from 'next/link'
 import React from 'react'
 import { ChapterNavProps } from '../../../types/interfaceTypes'
 
-const ChapterNav = ({ chapter = '', children }: ChapterNavProps): JSX.Element => {
-  console.log(chapter)
+const ChapterNav = ({ chapter = '', children, items = [] }: ChapterNavProps): JSX.Element => {
   return (
     <Box
+      component='div'
       sx={{
-        flexGrow: 1,
-        width: '100hw',
+        position: 'sticky',
+        top: 0,
+        width: '100%',
         display: 'flex',
+        flexShrink: 0,
         alignItems: 'center',
-        background: 'transparent',
-        backdropFilter: 'blur(20px)'
+        background: 'rgba(0, 0, 0, 0.6)',
+        backdropFilter: 'blur(6px)',
+        WebkitBackdropFilter: 'blur(6px)',
+        zIndex: 9
       }}
     >
       <Container maxWidth='xl'
@@ -34,7 +38,7 @@ const ChapterNav = ({ chapter = '', children }: ChapterNavProps): JSX.Element =>
         }}
         >
         <Box>
-          <Typography variant='h5' component='h1'>QINTOT ID  </Typography>
+          <Typography variant='h6' component='h1'> { chapter }  </Typography>
         </Box>
       </Box>
 
@@ -46,10 +50,7 @@ const ChapterNav = ({ chapter = '', children }: ChapterNavProps): JSX.Element =>
           }}
         >
           {
-            [
-              { name: 'Contact', slug: '/account/signin' },
-              { name: 'Sign in', slug: '/account/signin' }
-            ].map((item) => (
+            items.map((item) => (
               <Typography
                 key={item.name}
                 sx={{ pr: 3 }}

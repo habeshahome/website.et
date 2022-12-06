@@ -28,7 +28,7 @@ const WebsiteTemplateBanner = (): JSX.Element => {
           gap: 1
         }}>
           <Typography variant='h1' component='h1' align='center'>
-            Choose your Design
+            Choose <br/>Your Design
           </Typography>
           <BrandLogo width={136} height={18} roast={false}/>
           <Typography variant='h6' component='h2' align='center'>

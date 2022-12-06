@@ -11,13 +11,12 @@ export default function Support (): JSX.Element {
     <Layout1>
     <div className={styles.container}>
       <Head>
-        <title> Support </title>
+        <title> Get Support </title>
         <meta name="description" content="Get technical support in Ethiopia" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Box sx={{ minHeight: '100vh' }}>
-        Support
         <WebsiteBanner />
       </Box>
 

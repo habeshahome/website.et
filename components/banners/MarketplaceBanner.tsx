@@ -1,72 +1,163 @@
-import { Button, Icon, Typography } from '@mui/material'
+import { motion } from 'framer-motion'
+import { Container, Paper, Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import Image from 'next/image'
+// import BrandLogo from '../../@theme/layouts/global/BrandLogo'
+import { MarketPlaceBannerProps } from '../../types/interfaceTypes'
 import Link from 'next/link'
-import NavigateNextOutlinedIcon from '@mui/icons-material/NavigateNextOutlined'
-import BrandLogo from '../../@theme/layouts/global/BrandLogo'
 
-const Market = (): JSX.Element => {
+const cardVariants = {
+  initial: {
+    opacity: 0
+  },
+  animate: {
+    opacity: 1
+  }
+}
+
+const MarketPlaceBanner = ({ items, leadHeader, mainHeader }: MarketPlaceBannerProps): JSX.Element => {
   return (
-    <Box
+    <>
+    <Container
       sx={{
-        height: '90vh',
+        minHeight: '33vh',
         display: 'flex',
-        flexDirection: { xs: 'column', sm: 'row' },
+        flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center',
-        p: 3
-      }}>
+        alignItems: 'flex-start',
+        p: 0
+      }}
+    >
       <Box
         sx={{
-          flex: 1,
-          order: { xs: 2, sm: 1 },
           display: 'flex',
-          flexDirection: { xs: 'column' },
-          justifyContent: 'center',
+          flexDirection: { xs: 'column', sm: 'row' },
+          justifyContent: 'space-between',
+          width: '100%',
           alignItems: 'center',
           height: 'auto',
-          gap: 1
+          gap: 3,
+          p: 3
         }}>
-          <Typography variant='h1' component='h1' align='center'>
-            Website
-          </Typography>
-          <BrandLogo width={136} height={18} roast={false}/>
-          <Typography variant='h6' component='h2' align='center'>
-            Design. Development. Traffic.
-          </Typography>
-          <br/>
-          <Button variant='contained' color='info'>
-            Check Pricing
-          </Button>
-            <Link href='/website'>
-              <Box sx={{ display: 'inline-flex' }}>
-                <Typography variant='body1' gutterBottom={ true }>
-                  Learn more
-                </Typography>
-                <Icon component='span'>
-                  <NavigateNextOutlinedIcon fontSize='small'/>
-                </Icon>
-              </Box>
-            </Link>
+          <Box sx={{ }}>
+            <Typography
+              component='h1'
+              align='left'
+              sx={{
+                typography: { xs: 'h4', sm: 'h3', lg: 'h2' },
+                display: 'inline'
+              }}
+            >
+              <Typography
+              variant='inherit'
+              sx={{
+                fontWeight: 'bold',
+                letterSpacing: 1,
+                display: 'inherit',
+                cursor: 'pointer'
+              }}
+              > {leadHeader} &nbsp;</Typography>
+              <Typography
+                variant='inherit'
+                color='text.secondary'
+                sx={{ display: 'inherit' }}
+              >
+                {mainHeader}
+              </Typography>
+            </Typography>
+          </Box>
+
+          <Box
+            sx={{
+              my: 3,
+              width: '300px',
+              display: 'flex',
+              justifyContent: { xs: 'center', sm: 'right' }
+            }}
+          >
+            {/* <Link href='/onboarding'>
+              <Button
+                variant='contained'
+                size='large'
+                sx={{}}> Start a Project </Button>
+            </Link> */}
+          </Box>
       </Box>
-      <Box
+    </Container>
+
+    <Box
+        component='div'
         sx={{
-          position: 'relative',
-          display: 'flex',
-          flex: 1,
-          order: { xs: 2, sm: 1 },
+          display: 'block',
+          overflow: 'hidden',
           width: '100%',
-          height: '100%'
-        }}>
-        <Image
-          src={'/img/design.svg'}
-          sizes={''}
-          alt=''
-          fill
-          />
+          mx: 'auto'
+        }}
+      >
+        <Box
+          sx={{
+            mt: { xs: 0, sm: 6 },
+            display: 'block',
+            overflowX: 'scroll',
+            msOverflowX: 'scroll',
+            scrollSnapAlign: 'start',
+            whiteSpace: 'nowrap',
+            boxSizing: 'content-box',
+            p: 3,
+            mx: 'auto'
+          }}
+        >
+          {
+            items?.map((service) => (
+            <Link
+              key={service.name}
+              href={ service.slug }
+              scroll={ false }
+            >
+              <Paper
+                component= { motion.section }
+                elevation={6}
+                variants= { cardVariants }
+                whileHover={{ scale: 0.9 }}
+                sx={{
+                  display: 'inline-block',
+                  borderRadius: 6,
+                  p: 3,
+                  mr: 9,
+                  width: '300px',
+                  height: '130px',
+                  background: 'transparent',
+                  cursor: 'pointer'
+                }}
+              >
+                <Paper
+                  elevation={0}
+                  sx={{ height: '130px', background: 'none' }}
+                >
+                  <Typography variant='h3' align='center' noWrap>
+                    { service.desc }
+                  </Typography>
+                    <Typography
+                      variant='h6'
+                      component='h2'
+                      align='center'
+                      noWrap
+                      sx={{ display: 'block', letterSpacing: 1.3 }}
+                    >
+                      { service.name }
+                    </Typography>
+                </Paper>
+              </Paper>
+            </Link>
+            ))
+          }
+        </Box>
       </Box>
-    </Box>
+      </>
   )
 }
 
-export default Market
+export default MarketPlaceBanner
+
+/*
+
+*/

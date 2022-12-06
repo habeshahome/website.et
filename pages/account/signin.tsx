@@ -85,17 +85,21 @@ const SignIn = (): JSX.Element => {
           overflow: 'hidden'
         }}>
         <Box sx={{
-          marginTop: '12rem',
           marginInline: 'auto'
         }}>
           <FormGroup>
             <Typography
-              variant='h5'
+              variant='h4'
               component='h1'
               align='center'
-              sx={{ marginBottom: 2 }}
+              sx={{ mb: 9, display: 'inline' }}
             >
-              Sign in to website.et
+              Sign in to &nbsp;
+              <Typography
+                color='text.secondary'
+                variant='inherit'
+                sx={{ display: 'inline-block' }}
+              > website.et </Typography>
             </Typography>
             <ButtonGroup
               component={'div'}
@@ -123,7 +127,7 @@ const SignIn = (): JSX.Element => {
                         paddingInline: 1
                       }}
                     >
-                      <FormControl sx={{ width: '39ch' }} variant="standard">
+                      <FormControl sx={{ width: '32ch' }} variant="standard">
                         <Input
                           id='email'
                           type='email'
@@ -169,7 +173,7 @@ const SignIn = (): JSX.Element => {
                         paddingInline: 1
                       }}
                       >
-                        <FormControl sx={{ width: '39ch' }} variant="standard">
+                        <FormControl sx={{ width: '32ch' }} variant="standard">
                           <Input
                             id='password'
                             type='password'
@@ -211,8 +215,8 @@ const SignIn = (): JSX.Element => {
               </Button>
               }
             </ButtonGroup>
-            <Box sx={{ mt: 3 }}>
-              <Link href='/account/register'> Register </Link>
+            <Box sx={{ mt: 9 }}>
+              <Link href='/account/register'> or Create new Account </Link>
             </Box>
           </FormGroup>
         </Box>

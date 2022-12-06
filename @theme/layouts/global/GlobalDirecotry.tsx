@@ -23,14 +23,14 @@ export default function GlobalDirectory (): JSX.Element {
           id="panel1bh-header"
         >
           <Typography sx={{ width: '33%', flexShrink: 0 }}>
-            General settings
+            Website
           </Typography>
-          <Typography sx={{ color: 'text.secondary' }}>I am an accordion</Typography>
+          <Typography sx={{ color: 'text.secondary' }}>Design & Development</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-            Aliquam eget maximus est, id dignissim quam.
+            We deisgn professional website for small businesses & enterprises.
+            Just go ahead and start a project and follow the steps to provide us with information.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -40,16 +40,15 @@ export default function GlobalDirectory (): JSX.Element {
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>Users</Typography>
+          <Typography sx={{ width: '33%', flexShrink: 0 }}>Digital Marketing</Typography>
           <Typography sx={{ color: 'text.secondary' }}>
-            You are currently not an owner
+            Social Media Marketing  & SEO
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
-            varius pulvinar diam eros in elit. Pellentesque convallis laoreet
-            laoreet.
+            We are the leading digital marketing service provider in Ethiopia & East Africa! <br/>
+            We have a complete package wich can be configured to suite your business need.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -60,31 +59,15 @@ export default function GlobalDirectory (): JSX.Element {
           id="panel3bh-header"
         >
           <Typography sx={{ width: '33%', flexShrink: 0 }}>
-            Advanced settings
+            Software as a Service
           </Typography>
           <Typography sx={{ color: 'text.secondary' }}>
-            Filtering has been entirely disabled for whole web server
+            Digital Products
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-            amet egestas eros, vitae egestas augue. Duis vel est augue.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel4bh-content"
-          id="panel4bh-header"
-        >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>Personal data</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-            amet egestas eros, vitae egestas augue. Duis vel est augue.
+            Check out our product page to try and purchase our software products.
           </Typography>
         </AccordionDetails>
       </Accordion>

@@ -14,6 +14,8 @@ import theme from '../../@theme/theme'
 import axios from '../../@config/axios'
 import { useSnackbar, VariantType } from 'notistack'
 import Link from 'next/link'
+import BrandLogo from '../../@theme/layouts/global/BrandLogo'
+import { useRouter } from 'next/router'
 // import axios from '../../@config/axios'
 
 // configuring regex for inputs
@@ -23,6 +25,8 @@ const PASSWORD_REGX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
 
 const Register = (): JSX.Element => {
   // const { auth, setAuth } = useContext(AuthContext)
+  const router = useRouter()
+
   // declaring references
   const userRef = useRef() // to focus on username
 
@@ -56,8 +60,13 @@ const Register = (): JSX.Element => {
   }
 
   function resetForm (): void {
+    // clear username field
     setUser('')
     setValidUsername(false)
+    // clear email field
+    setEmail('')
+    setValidEmail(false)
+    // clear password field
     setPwd('')
     setValidPwd(false)
     setMatchPwd('')
@@ -67,9 +76,10 @@ const Register = (): JSX.Element => {
 
   const handleSubmit = async (): Promise<any> => {
     setIsLoading(true) // show some loading animation
-    Notify('Registration Form Submitted', 'success')
+    // registration url
     const REGISTER_URL = '/register'
     console.log('Handling Form Submission')
+
     try {
       await axios.post(
         REGISTER_URL,
@@ -86,7 +96,6 @@ const Register = (): JSX.Element => {
           setSuccess(true)
           console.log(success)
           console.log(data)
-          resetForm()
           return data
         })
         .catch((err) => {
@@ -98,7 +107,11 @@ const Register = (): JSX.Element => {
       console.error('Something went wrong')
     } finally {
       setTimeout(() => {
+        Notify('Registration Form Submitted', 'info')
         setIsLoading(false)
+        resetForm()
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
+        router.push('/dashboard')
       }, 5000)
     }
   }
@@ -155,9 +168,7 @@ const Register = (): JSX.Element => {
             alignItems: 'center'
           }}
         >
-          <Typography variant='h1' align='center'>
-            Safe & Secure
-          </Typography>
+          <BrandLogo />
         </Box>
 
         {/** Registration Form */}
@@ -289,6 +300,7 @@ const Register = (): JSX.Element => {
                 type={ showPwd ? 'text' : 'password' }
                 placeholder=''
                 value={ pwd }
+                inputProps={{ tabIndex: 3 }}
                 onChange={ (e) => setPwd(e.target.value) }
                 autoFocus= { pwdFocus }
                 onFocus={ () => setPwdFocus(true)}
@@ -327,6 +339,7 @@ const Register = (): JSX.Element => {
                 type={ showPwd ? 'text' : 'password' }
                 placeholder=''
                 value={ matchPwd }
+                inputProps={{ tabIndex: 4 }}
                 onChange={ (e) => setMatchPwd(e.target.value)}
                 onFocus={ (e) => setMatchFocus(true)}
                 onBlur={ (e) => setMatchFocus(false)}
@@ -353,14 +366,15 @@ const Register = (): JSX.Element => {
               }
               <Button
                 sx={{ mt: 9, p: 2 }}
+                tabIndex={ 5 }
                 variant='contained'
                 size='large'
-                color='success'
+                color='info'
                 // eslint-disable-next-line @typescript-eslint/no-misused-promises
                 onClick={ handleSubmit }
                 disabled={ (!validUsername || !validEmail || !validPwd || !validMatch || isLoading) }
               >
-                 { isLoading ? 'Processing...' : 'Register'}
+                 { isLoading ? 'Registering...' : 'Create Account'}
               </Button>
             </FormControl>
 

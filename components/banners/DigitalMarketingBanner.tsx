@@ -28,7 +28,7 @@ const DigitalMarketingBanner = (): JSX.Element => {
           gap: 1
         }}>
           <Typography variant='h1' component='h1' align='center'>
-            Digital Marketing
+            Digital <br/>Marketing
           </Typography>
           <BrandLogo width={136} height={18} roast={false}/>
           <Typography variant='h6' component='h2' align='center'>

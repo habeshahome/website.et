@@ -7,6 +7,11 @@ const auth = atom({
   default: {}
 })
 
+export const language = atom({
+  key: 'language',
+  default: 'en'
+})
+
 const brand = atom({
   key: 'brand',
   default: 'website.et'

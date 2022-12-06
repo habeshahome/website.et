@@ -5,7 +5,7 @@ exports.id = 660;
 exports.ids = [660];
 exports.modules = {
 
-/***/ 4957:
+/***/ 892:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -22,23 +22,6 @@ function Document() {
         children: [
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(next_document__WEBPACK_IMPORTED_MODULE_1__.Head, {
                 children: [
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
-                        href: "https://fonts.googleapis.com/css2?family=Inter&display=optional",
-                        rel: "stylesheet"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
-                        rel: "preconnect",
-                        href: "https://fonts.googleapis.com"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
-                        rel: "preconnect",
-                        href: "https://fonts.gstatic.com",
-                        crossOrigin: "anonymous"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
-                        href: "https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap",
-                        rel: "stylesheet"
-                    }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
                         name: "application-name",
                         content: "website.et"
@@ -178,6 +161,23 @@ function Document() {
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
                         property: "og:image",
                         content: "https://website.et/icons/apple-touch-icon.png"
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                        href: "https://fonts.googleapis.com/css2?family=Inter&display=optional",
+                        rel: "stylesheet"
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                        rel: "preconnect",
+                        href: "https://fonts.googleapis.com"
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                        rel: "preconnect",
+                        href: "https://fonts.gstatic.com",
+                        crossOrigin: "anonymous"
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                        href: "https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap",
+                        rel: "stylesheet"
                     })
                 ]
             }),
@@ -189,7 +189,10 @@ function Document() {
             })
         ]
     });
-}
+} /**
+ * @ContentSecurityPolicy
+   <meta httpEquiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval' website.et 127.0.0.1 " />
+ */ 
 
 
 /***/ }),
@@ -257,7 +260,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [676,859], () => (__webpack_exec__(4957)));
+var __webpack_exports__ = __webpack_require__.X(0, [313,859], () => (__webpack_exec__(892)));
 module.exports = __webpack_exports__;
 
 })();

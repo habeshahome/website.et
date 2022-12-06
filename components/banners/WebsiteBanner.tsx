@@ -4,8 +4,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import NavigateNextOutlinedIcon from '@mui/icons-material/NavigateNextOutlined'
 import BrandLogo from '../../@theme/layouts/global/BrandLogo'
+import { useInView } from 'react-intersection-observer'
+import { useEffect } from 'react'
 
 const WebsiteBanner = (): JSX.Element => {
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0
+  })
+
+  useEffect(() => {
+    console.log(inView)
+    console.log(entry)
+  }, [inView])
+
   return (
     <Box
       sx={{
@@ -49,21 +61,37 @@ const WebsiteBanner = (): JSX.Element => {
               </Box>
             </Link>
       </Box>
-      <Box
+        <Box
+        component='div'
         sx={{
-          position: 'relative',
-          display: 'flex',
-          flex: 1,
-          order: { xs: 2, sm: 1 },
+          display: 'block',
           width: '100%',
-          height: '100%'
-        }}>
-        <Image
-          src={'/img/design.svg'}
-          sizes={''}
-          alt=''
-          fill
-          />
+          overflow: 'hidden'
+        }}
+      >
+        <Box
+          component='div'
+          ref={ ref }
+          sx={{
+            display: 'block',
+            overflowX: 'scroll',
+            msOverflowX: 'scroll',
+            scrollSnapAlign: 'start',
+            whiteSpace: 'nowrap',
+            boxSizing: 'content-box',
+            p: 6
+          }}
+        >
+          <Box sx={{ display: 'inline-block' }}>
+            <Image
+              src={'/img/design.svg'}
+              sizes={''}
+              alt=''
+              fill
+            />
+          </Box>
+
+      </Box>
       </Box>
     </Box>
   )

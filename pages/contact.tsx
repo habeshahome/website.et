@@ -17,7 +17,6 @@ export default function Contact (): JSX.Element {
       </Head>
 
       <Box sx={{ minHeight: '100vh' }}>
-        Contact
         <WebsiteBanner />
       </Box>
 

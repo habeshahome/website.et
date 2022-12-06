@@ -1,15 +1,15 @@
 import React from 'react'
 import Head from 'next/head'
 import Layout1 from '../@theme/layouts/layout1'
-import styles from '../styles/Home.module.css'
 import { PricingBanner } from '../components/banners'
 import { Box } from '@mui/system'
+import Wrapper from '../components/surfaces/wrappers/Wrapper'
+import { ChapterNav } from '../@theme/layouts/chapter'
 
 export default function Pricing (): JSX.Element {
   // const { auth } = useContext(AuthContext)
   return (
     <Layout1>
-    <div className={styles.container}>
       <Head>
         <title>Pricing</title>
         <meta
@@ -18,11 +18,16 @@ export default function Pricing (): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Box sx={{ minHeight: '100vh' }}>
-        <PricingBanner />
-      </Box>
+      <ChapterNav
+        chapter='Pricing'
+        items={[]}
+      />
 
-    </div>
+      <Wrapper>
+        <Box sx={{ minHeight: '100vh' }}>
+          <PricingBanner />
+        </Box>
+      </Wrapper>
     </Layout1>
   )
 }

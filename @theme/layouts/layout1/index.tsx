@@ -1,32 +1,51 @@
 import { Box } from '@mui/material'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useRouter } from 'next/router'
+// import { useRecoilValue } from 'recoil'
+// import { amET, enUS } from '../../../i18n'
+// import { language } from '../../../store'
 import { LayoutProps } from '../../../types/interfaceTypes'
-import { ChapterNav } from '../chapter'
 import { GlobalFooter, GlobalNav } from '../global'
 
-const Layout1 = ({ options, children }: LayoutProps): JSX.Element => {
+const Layout1 = ({ options, children, header }: LayoutProps): JSX.Element => {
+  const router = useRouter()
+  // const lang = useRecoilValue(language)
+  // const t = lang === 'en' ? enUS : amET
+
   return (
-    <Box
-      component='div'
-      >
+    <Box component='div' height='auto'>
+      {
+        header
+      }
         <GlobalNav
           brand={'website.et'}
           items={
             [
-              { name: 'Sell Online', slug: '/online_shop', img: '' },
-              { name: 'Marketing', slug: '/digital_marketing', img: '' },
-              { name: 'Web Design', slug: '/templates', img: '' },
-              { name: 'Pricing', slug: '/pricing', img: '' },
-              { name: 'Learn', slug: '/learn', img: '' },
-              { name: 'Partner', slug: '/partner', img: '' }
+              // { name: 'Services', slug: '/services', img: '' }
             ]
               } />
-        <ChapterNav />
-          <Box
-            component='div'
-            sx={{ height: 'auto', width: 'auto', overflowX: 'hidden', flexShrink: 0 }}
-          >
-            { children }
-          </Box>
+
+          <motion.main>
+            <AnimatePresence mode='wait' onExitComplete={() => alert(router.route)}>
+
+              <Box
+                key={ router.route }
+                component={ motion.div }
+                initial={{ y: 10 }}
+                animate={{ y: 0 }}
+                exit={{ x: 300 }}
+                sx={{
+                  height: 'auto',
+                  width: 'auto',
+                  overflowX: 'hidden',
+                  flexShrink: 0,
+                  boxSizing: 'content-box'
+                }}
+              >
+                    {children}
+              </Box>
+            </AnimatePresence>
+          </motion.main>
         <GlobalFooter />
     </Box>
   )
