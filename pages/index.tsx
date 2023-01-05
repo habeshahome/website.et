@@ -7,6 +7,7 @@ import MarketPlaceCards from '../components/cards/MarketPlaceCards'
 import Wrapper from '../components/surfaces/wrappers/Wrapper'
 import { language } from '../store'
 import { useRecoilValue } from 'recoil'
+import DynamicCard from '../components/cards/DynamicCard'
 // import DynamicCard from '../components/cards/DynamicCard'
 
 export default function Home (): JSX.Element {
@@ -31,14 +32,14 @@ export default function Home (): JSX.Element {
   { title: t.YOUR_SERVICE, caption: 'Multiple options', tag: 'Flexi', img: '/img/online-shop.png' }
 ]
 
-  //   const items =
-  // [
-  //   { title: 'Fast and Secure.', caption: 'Starting from AED - 3002', tag: 'Revenue', img: '/img/mobile_smooth.gif' },
-  //   { title: 'Great Delligence', caption: 'Always On-time', tag: 'Delligence', img: '/img/mobile_bank.gif' },
-  //   { title: 'Flexible Plans', caption: 'Multiple options', tag: 'Flexi', img: '/img/mobile_ui.gif' },
-  //   { title: 'Beyond. Expectations!', caption: 'Multiple options', tag: 'Flexi', img: '/img/store-card.jpeg' },
-  //   { title: 'Designed for Success', caption: 'Pixel Perfect', tag: 'Top Level Design', img: '/img/store-card.jpeg' }
-  // ]
+  const items =
+  [
+    { title: 'Facebook', caption: '', tag: 'advertise ', img: ' ' },
+    { title: '', caption: ' ', tag: 'advertise ', img: ' ' },
+    { title: 'Tiktok', caption: ' ', tag: 'advertise ', img: ' ' },
+    { title: '', caption: ' ', tag: 'advertise ', img: ' ' },
+    { title: '', caption: ' ', tag: 'advertise ', img: ' ' }
+  ]
 
   return (
     <Layout1>
@@ -62,13 +63,13 @@ export default function Home (): JSX.Element {
           mainHeader={ t.IS_OUR_PRIORITY }
         />
 
-        {/* <DynamicCard
+        <DynamicCard
           items={ items }
-          leadHeader='Small'
-          mainHeader='Large'
-          width='18rem'
-          height='14rem'
-        /> */}
+          leadHeader='Only'
+          mainHeader='pay for results.'
+          width='300px'
+          height='300px'
+        />
 
       </Wrapper>
     </Layout1>

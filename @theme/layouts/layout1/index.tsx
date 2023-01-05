@@ -13,7 +13,11 @@ const Layout1 = ({ options, children, header }: LayoutProps): JSX.Element => {
   // const t = lang === 'en' ? enUS : amET
 
   return (
-    <Box component='div' height='auto'>
+    <Box component='div' height='auto'
+    sx={{
+      dispay: 'grid',
+      gridTemplateRows: '100vh'
+    }}>
       {
         header
       }

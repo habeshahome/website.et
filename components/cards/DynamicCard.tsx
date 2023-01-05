@@ -58,7 +58,8 @@ const DynamicCard = ({ items, leadHeader = '', mainHeader = '', width = 'auto', 
           component='div'
           ref={ ref }
           sx={{
-            display: 'block',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
             overflowX: 'scroll',
             msOverflowX: 'scroll',
             scrollSnapAlign: 'start',
@@ -95,10 +96,25 @@ const DynamicCard = ({ items, leadHeader = '', mainHeader = '', width = 'auto', 
               <Typography
                 variant='overline'
                 color='text.secondary'
-                sx={{ letterSpacing: 1.7 }}
-              > {item.tag} </Typography>
-              <Typography variant='h5' sx={{}}> { item.title } </Typography>
-              <Typography variant='body1'> { item.caption } </Typography>
+                sx={{
+                  letterSpacing: 1.7,
+                  display: 'block'
+                }}
+              >
+                {item.tag}
+              </Typography>
+              <Typography
+                variant='h5'
+                sx={{ display: 'block' }}
+              >
+                { item.title }
+              </Typography>
+              <Typography
+                variant='body1'
+                sx={{ display: 'block' }}
+              >
+                { item.caption }
+              </Typography>
             </Paper>
           ))
         }

@@ -41,21 +41,23 @@ const MarketPlaceBanner = ({ items, leadHeader, mainHeader }: MarketPlaceBannerP
           <Box sx={{ }}>
             <Typography
               component='h1'
-              align='left'
+              align='center'
               sx={{
                 typography: { xs: 'h4', sm: 'h3', lg: 'h2' },
                 display: 'inline'
               }}
             >
               <Typography
-              variant='inherit'
-              sx={{
-                fontWeight: 'bold',
-                letterSpacing: 1,
-                display: 'inherit',
-                cursor: 'pointer'
-              }}
-              > {leadHeader} &nbsp;</Typography>
+                variant='inherit'
+                sx={{
+                  fontWeight: 'bold',
+                  letterSpacing: 1,
+                  display: 'inherit',
+                  cursor: 'pointer'
+                }}
+              >
+                {leadHeader} &nbsp;
+              </Typography>
               <Typography
                 variant='inherit'
                 color='text.secondary'
@@ -117,7 +119,7 @@ const MarketPlaceBanner = ({ items, leadHeader, mainHeader }: MarketPlaceBannerP
                 component= { motion.section }
                 elevation={6}
                 variants= { cardVariants }
-                whileHover={{ scale: 0.9 }}
+                whileHover={{ scale: 1.05 }}
                 sx={{
                   display: 'inline-block',
                   borderRadius: 6,

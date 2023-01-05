@@ -1,3 +1,5 @@
+import React, { useState, useEffect, useRef, useContext } from 'react'
+import { useRouter } from 'next/router'
 import
 {
   FormGroup, Typography, Input, ButtonGroup, Button, InputAdornment, IconButton,
@@ -9,16 +11,20 @@ import FacebookIcon from '@mui/icons-material/Facebook'
 import FingerprintIcon from '@mui/icons-material/Fingerprint'
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined'
 import { GlobalFooter, GlobalNav } from '../../@theme/layouts/global'
-import React, { useState, useEffect, useRef } from 'react'
 import { signinUser } from '../../services/auth/SignInService'
 import Head from 'next/head'
 import Link from 'next/link'
 import theme from '../../@theme/theme'
+import AuthContext from '../../context/AuthProvider'
 
 const EMAIL_REGX = /^([a-zA-Z0-9_.-]+)@([\da-zA-Z.-]+)\.([a-zA-Z.]{2,63})$/
 const PASSWORD_REGX = /^.{8,24}$/
 
 const SignIn = (): JSX.Element => {
+  const { setAuth } = useContext(AuthContext)
+  const router = useRouter()
+  const { setIsLoggedIn } = useContext(AuthContext)
+
   const emailRef = useRef()
   const [email, setEmail] = useState('')
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -30,17 +36,30 @@ const SignIn = (): JSX.Element => {
   const [pwdFocus, setPwdFocus] = useState(false)
   const [validPwd, setValidPwd] = useState(false)
 
-  async function handleSignIn (): Promise<Object> {
+  // Singin Function
+  const handleSignIn = async (): Promise<Object> => {
     try {
       await signinUser(email, pwd)
+        .then((res) => {
+          setAuth(res)
+          // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, no-prototype-builtins
+          if (res.hasOwnProperty('accessToken')) {
+            console.log('Signin Successfull')
+            setIsLoggedIn(true)
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
+            router.push('/console')
+          }
+        })
     } catch (err) {
+      console.error('No Server Response. ERROR: www.website.et')
       console.error(err)
     } finally {
-      console.log('Sign in Process Exited')
+      console.log('Finally Sign in Process Exited')
     }
     return {}
   }
-  async function handleKeyDownSignin (event: React.KeyboardEvent): Promise<Object> {
+
+  const handleKeyDownSignin = async (event: React.KeyboardEvent): Promise<Object> => {
     if (event.key === 'Enter') {
       console.log('Signing via Keyboard...')
       await handleSignIn()
@@ -195,7 +214,8 @@ const SignIn = (): JSX.Element => {
                                   <InputAdornment position="end">
                                     <IconButton
                                       aria-label="toggle password visibility"
-                                      onClick={ () => handleSignIn }
+                                      // eslint-disable-next-line @typescript-eslint/no-misused-promises
+                                      onClick={ handleSignIn }
                                       edge="end"
                                     >
                                       <ArrowCircleRightOutlinedIcon

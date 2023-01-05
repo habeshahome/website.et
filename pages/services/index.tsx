@@ -1,12 +1,20 @@
-import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
+import { useEffect } from 'react'
 import Layout1 from '../../@theme/layouts/layout1'
+import useAxios from '../../hooks/useAxios'
 
 export default function Services (): JSX.Element {
+  const { data, isLoading, error } = useAxios('https://jsonplaceholder.typicode.com/todos')
+
+  useEffect(() => {
+    console.log(data)
+  })
+
   return (
     <Layout1>
       <Box sx={{ minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Typography variant='h1'> Reactive - Micro-Services</Typography>
+        { (isLoading === true) ? 'Loading Data' : 'Done'}
+        { (error.length > 0) && <p>  { error } </p> }
       </Box>
     </Layout1>
   )
