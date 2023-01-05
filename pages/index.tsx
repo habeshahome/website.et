@@ -63,13 +63,13 @@ export default function Home (): JSX.Element {
           mainHeader={ t.IS_OUR_PRIORITY }
         />
 
-        <DynamicCard
+        {/* <DynamicCard
           items={ items }
           leadHeader='Only'
           mainHeader='pay for results.'
           width='300px'
           height='300px'
-        />
+        /> */}
 
       </Wrapper>
     </Layout1>
