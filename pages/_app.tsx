@@ -8,6 +8,7 @@ import Head from 'next/head'
 import { SnackbarProvider } from 'notistack'
 import { CssBaseline } from '@mui/material'
 import { AuthProvider } from '../context/AuthProvider'
+import { Analytics } from '@vercel/analytics/react'
 
 export default function App ({ Component, pageProps }: AppProps): JSX.Element {
   // Zoho Sales Iq Script:
@@ -41,6 +42,7 @@ export default function App ({ Component, pageProps }: AppProps): JSX.Element {
         </Head>
 
         {useScript('https://salesiq.zoho.com/widget', 'f010f95bb26f61557069d847eccfe0f39e8f5cb18bca33b02501c7bc74614e9f')}
+        <Analytics />
 
         <AuthProvider>
           <SnackbarProvider
