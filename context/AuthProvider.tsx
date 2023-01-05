@@ -1,7 +1,7 @@
 import React, { useState, createContext, useEffect } from 'react'
 
 interface AuthPropType {
-  children: React.ReactNode[]
+  children: React.ReactNode
 }
 
 const AuthContext =

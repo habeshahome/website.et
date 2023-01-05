@@ -19,8 +19,8 @@ const useScript = (url: string, widgetCode: string): any => {
 
 export default function SalesIQ (): JSX.Element {
   return (
-        <React.Fragment>
-            {useScript('https://salesiq.zoho.com/widget', '26e0341d5fd3387e156094eb3ca4f337342596e67878f57aed5ce5be0be61aa4')}
-        </React.Fragment>
+        <>
+            {useScript('https://salesiq.zoho.com/widget', process.env.SALESIQ ?? '')}
+        </>
   )
 }

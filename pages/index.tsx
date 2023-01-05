@@ -7,7 +7,7 @@ import MarketPlaceCards from '../components/cards/MarketPlaceCards'
 import Wrapper from '../components/surfaces/wrappers/Wrapper'
 import { language } from '../store'
 import { useRecoilValue } from 'recoil'
-import DynamicCard from '../components/cards/DynamicCard'
+// import DynamicCard from '../components/cards/DynamicCard'
 // import DynamicCard from '../components/cards/DynamicCard'
 
 export default function Home (): JSX.Element {
@@ -32,14 +32,14 @@ export default function Home (): JSX.Element {
   { title: t.YOUR_SERVICE, caption: 'Multiple options', tag: 'Flexi', img: '/img/online-shop.png' }
 ]
 
-  const items =
-  [
-    { title: 'Facebook', caption: '', tag: 'advertise ', img: ' ' },
-    { title: '', caption: ' ', tag: 'advertise ', img: ' ' },
-    { title: 'Tiktok', caption: ' ', tag: 'advertise ', img: ' ' },
-    { title: '', caption: ' ', tag: 'advertise ', img: ' ' },
-    { title: '', caption: ' ', tag: 'advertise ', img: ' ' }
-  ]
+  // const items =
+  // [
+  //   { title: 'Facebook', caption: '', tag: 'advertise ', img: ' ' },
+  //   { title: '', caption: ' ', tag: 'advertise ', img: ' ' },
+  //   { title: 'Tiktok', caption: ' ', tag: 'advertise ', img: ' ' },
+  //   { title: '', caption: ' ', tag: 'advertise ', img: ' ' },
+  //   { title: '', caption: ' ', tag: 'advertise ', img: ' ' }
+  // ]
 
   return (
     <Layout1>
