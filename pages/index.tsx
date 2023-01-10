@@ -127,7 +127,7 @@ export default function Home (): JSX.Element {
     { title: 'Customer Experience', caption: '', tag: 'Better', img: '' },
     { title: 'Data & Analytics', caption: '', tag: 'Smart', img: ' ' },
     { title: 'Cloud Computing', caption: ' ', tag: 'Connected', img: ' ' },
-    { title: 'Mobility', caption: ' ', tag: '', img: 'Advanced' }
+    { title: 'Mobility', caption: ' ', tag: 'Advanced', img: '' }
   ]
 
   return (
@@ -183,7 +183,7 @@ export default function Home (): JSX.Element {
           leadHeader='Join'
           mainHeader='Digital Ethiopia 2025 Initiative'
           width='300px'
-          height='100px'
+          height='120px'
         />
       </Wrapper>
     </Layout1>
