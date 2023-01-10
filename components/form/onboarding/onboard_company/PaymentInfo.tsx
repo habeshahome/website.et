@@ -1,26 +1,26 @@
 import { FormControl, Input, InputLabel } from '@mui/material'
-import FormWrapper from '../../form/FormWrapper'
+import FormWrapper from '../../FormWrapper'
 
 interface FieldProps {
-  contactPerson: string
+  paymentInfo: string
 }
 
-type ContactInfoProps = FieldProps & {
+type PaymentInfoProps = FieldProps & {
   updateFields: (fields: Partial<FieldProps>) => void
 }
 
-const ContactInfo = ({ contactPerson, updateFields }: ContactInfoProps): JSX.Element => {
+const PaymentInfo = ({ paymentInfo, updateFields }: PaymentInfoProps): JSX.Element => {
   return (
-    <FormWrapper title='Contact Info'>
+    <FormWrapper title='Payment Info'>
         <FormControl sx={{ m: 1, width: '39ch' }} variant="standard">
-              <InputLabel htmlFor="username-input"> Contact Person </InputLabel>
+              <InputLabel htmlFor="username-input"> Payment Info </InputLabel>
               <Input
                 sx={{
                   fontSize: '1.3rem'
                 }}
                 type='text'
-                value={ contactPerson }
-                onChange={ (e) => updateFields({ contactPerson: e.target.value }) }
+                value={ paymentInfo }
+                onChange={ (e) => updateFields({ paymentInfo: e.target.value }) }
                 placeholder=''
                 inputProps={{ tabIndex: 1 }}
                 required
@@ -31,4 +31,4 @@ const ContactInfo = ({ contactPerson, updateFields }: ContactInfoProps): JSX.Ele
   )
 }
 
-export default ContactInfo
+export default PaymentInfo

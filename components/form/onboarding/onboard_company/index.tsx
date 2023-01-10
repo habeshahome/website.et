@@ -1,7 +1,7 @@
 import { Box, Button, FormGroup, Paper, Typography } from '@mui/material'
 import { Container } from '@mui/system'
 import { FormEvent, useState } from 'react'
-import useMultiStepForm from '../../../hooks/useMultiStepForm'
+import useMultiStepForm from '../../../../hooks/useMultiStepForm'
 import BasicInfo from './BasicInfo'
 import ContactInfo from './ContactInfo'
 import PaymentInfo from './PaymentInfo'
@@ -10,6 +10,7 @@ import ServiceInfo from './ServiceInfo'
 interface FormData {
   companyName: string
   contactPerson: string
+  contactPhone: string
   serviceType: string
   paymentInfo: string
 }
@@ -17,11 +18,12 @@ interface FormData {
 const initFormData: FormData = {
   companyName: '',
   contactPerson: '',
+  contactPhone: '',
   serviceType: '',
   paymentInfo: ''
 }
 
-const OnboardCompany = (): JSX.Element => {
+export default function OnboardCompany (): JSX.Element {
   const [formData, setFormData] = useState(initFormData)
   // I love TS
   function updateFields (fields: Partial<FormData>): void {
@@ -29,6 +31,7 @@ const OnboardCompany = (): JSX.Element => {
       return { ...prev, ...fields }
     })
   }
+
   const steps = [
       <BasicInfo key={1} { ...formData } updateFields={ updateFields } />,
       <ContactInfo key={2} { ...formData } updateFields={ updateFields } />,
@@ -37,7 +40,12 @@ const OnboardCompany = (): JSX.Element => {
   ]
 
   const {
-    step, item, back, next, isLastStep, isFirstStep
+    step,
+    item,
+    back,
+    next,
+    isLastStep,
+    isFirstStep
   } =
     useMultiStepForm({
       steps
@@ -67,19 +75,49 @@ const OnboardCompany = (): JSX.Element => {
           my: 'auto'
         }}
       >
+
         <p> { String(formData.companyName) }  </p>
         <p> { String(formData.contactPerson) }  </p>
+        <p> { String(formData.contactPhone) } </p>
         <p> { String(formData.paymentInfo) }  </p>
         <p> { String(formData.serviceType) }  </p>
-        <Typography variant='h5'> Progress { (step / (steps.length - 1)) * 100 } </Typography>
-        <Typography variant='h5'> { step } { String(isLastStep) } </Typography>
+
+        <Typography variant='h5'>
+          Progress { Math.floor((step / (steps.length - 1)) * 100) }%
+        </Typography>
+
+        <Typography variant='h5'>
+          { step } { String(isLastStep) }
+        </Typography>
 
         <FormGroup onSubmit={onSubmit}>
+
           { item }
 
-        <Box sx={{ display: 'inline-flex', gap: 3, py: 6, justifyContent: 'flex-end' }}>
-          { isFirstStep === false && <Button variant='contained' color='info' size='large' onClick={ back }> Back </Button> }
-          <Button variant='contained' color='info' size='large' onClick={onSubmit} sx={{ ml: 'auto' }}>
+        <Box
+          sx={{
+            display: 'inline-flex',
+            gap: 3,
+            py: 6,
+            justifyContent: 'flex-end'
+          }}
+        >
+          {
+            isFirstStep === false &&
+              <Button
+                variant='contained'
+                color='info'
+                size='large'
+                onClick={ back }
+              >
+                Back
+              </Button>
+          }
+
+          <Button variant='contained' color={ isLastStep === true ? 'success' : 'info'} size='large'
+            onClick={onSubmit}
+            sx={{ ml: 'auto' }}
+          >
             { isLastStep === true ? 'Finish' : 'Next' }
           </Button>
         </Box>
@@ -90,5 +128,3 @@ const OnboardCompany = (): JSX.Element => {
     </Container>
   )
 }
-
-export default OnboardCompany

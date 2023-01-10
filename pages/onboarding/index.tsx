@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import { Box } from '@mui/system'
-import { Typography } from '@mui/material'
+import OnboardingForm from '../../components/form/OnboardingForm'
 
 export default function Onboarding (): JSX.Element {
   // const { auth } = useContext(AuthContext)
@@ -15,9 +15,9 @@ export default function Onboarding (): JSX.Element {
       </Head>
 
       <Box sx={{ minHeight: '100vh' }}>
-        <Typography variant='h3' align='center'> Onboarding ... </Typography>
         <Box>
           <motion.div animate={{ x: 100 }} />
+          <OnboardingForm />
         </Box>
       </Box>
 

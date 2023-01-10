@@ -7,7 +7,16 @@ import { DynamicCardProps } from '../../types/interfaceTypes'
 // import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 // import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 
-const DynamicCard = ({ items, leadHeader = '', mainHeader = '', width = 'auto', height = 'auto' }: DynamicCardProps): JSX.Element => {
+const DynamicCard = ({
+  items,
+  leadHeader = '',
+  mainHeader = '',
+  width = 'auto',
+  height = 'auto',
+  opacity1 = '0.7',
+  opacity2 = '0.5'
+}: DynamicCardProps): JSX.Element => {
+  //
   const ref = useRef()
 
   return (
@@ -36,7 +45,7 @@ const DynamicCard = ({ items, leadHeader = '', mainHeader = '', width = 'auto', 
           letterSpacing: 1,
           display: 'inline-block'
         }}
-        > { leadHeader } &nbsp; </Typography>
+        > { leadHeader }&nbsp; </Typography>
         <Typography
           variant='inherit'
           color='text.secondary'
@@ -58,8 +67,7 @@ const DynamicCard = ({ items, leadHeader = '', mainHeader = '', width = 'auto', 
           component='div'
           ref={ ref }
           sx={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
+            display: 'block',
             overflowX: 'scroll',
             msOverflowX: 'scroll',
             scrollSnapAlign: 'start',
@@ -76,7 +84,7 @@ const DynamicCard = ({ items, leadHeader = '', mainHeader = '', width = 'auto', 
               key={ Math.random()}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              whileHover={{ scale: 0.9 }}
+              whileHover={{ scale: 1.01 }}
               sx={{
                 display: 'inline-block',
                 width,
@@ -85,7 +93,7 @@ const DynamicCard = ({ items, leadHeader = '', mainHeader = '', width = 'auto', 
                 p: 3,
                 mr: 6,
                 background: 'transparent',
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), url('${item?.img}')`,
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, ${opacity1}), rgba(0, 0, 0, ${opacity2})), url('${item?.img}')`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
@@ -101,13 +109,13 @@ const DynamicCard = ({ items, leadHeader = '', mainHeader = '', width = 'auto', 
                   display: 'block'
                 }}
               >
-                {item.tag}
+                {item.tag} &nbsp;
               </Typography>
               <Typography
                 variant='h5'
                 sx={{ display: 'block' }}
               >
-                { item.title }
+                { item.title } &nbsp;
               </Typography>
               <Typography
                 variant='body1'

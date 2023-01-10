@@ -75,7 +75,7 @@ const MarketPlaceCards = ({ items, leadHeader = '', mainHeader = '' }: MarketPla
               key={ Math.random()}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              whileHover={{ scale: 0.9 }}
+              whileHover={{ scale: 1.01 }}
               sx={{
                 display: 'inline-block',
                 width: '400px',

@@ -57,6 +57,8 @@ export interface DynamicCardProps {
   mainHeader?: string
   width?: string
   height?: string
+  opacity1?: string
+  opacity2?: string
 }
 
 export interface ProductCardProps {

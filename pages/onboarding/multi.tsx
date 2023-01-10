@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material'
-import OnboardCompany from '../../components/onboarding/onboard_company'
+import OnboardCompany from '../../components/form/onboarding/onboard_company'
 import useLocalStorage from '../../hooks/useLocalStorage'
 
 const Multi = (): JSX.Element => {

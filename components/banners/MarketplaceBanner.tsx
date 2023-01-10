@@ -119,7 +119,7 @@ const MarketPlaceBanner = ({ items, leadHeader, mainHeader }: MarketPlaceBannerP
                 component= { motion.section }
                 elevation={6}
                 variants= { cardVariants }
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.01 }}
                 sx={{
                   display: 'inline-block',
                   borderRadius: 6,

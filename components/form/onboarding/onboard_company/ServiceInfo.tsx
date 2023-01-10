@@ -1,26 +1,26 @@
 import { FormControl, Input, InputLabel } from '@mui/material'
-import FormWrapper from '../../form/FormWrapper'
+import FormWrapper from '../../FormWrapper'
 
 interface FieldProps {
-  paymentInfo: string
+  serviceType: string
 }
 
-type PaymentInfoProps = FieldProps & {
+type ServiceInfoProps = FieldProps & {
   updateFields: (fields: Partial<FieldProps>) => void
 }
 
-const PaymentInfo = ({ paymentInfo, updateFields }: PaymentInfoProps): JSX.Element => {
+const ServiceInfo = ({ serviceType, updateFields }: ServiceInfoProps): JSX.Element => {
   return (
-    <FormWrapper title='Payment Info'>
+    <FormWrapper title='Service Info'>
         <FormControl sx={{ m: 1, width: '39ch' }} variant="standard">
-              <InputLabel htmlFor="username-input"> Payment Info </InputLabel>
+              <InputLabel htmlFor="username-input"> Service Info </InputLabel>
               <Input
                 sx={{
                   fontSize: '1.3rem'
                 }}
                 type='text'
-                value={ paymentInfo }
-                onChange={ (e) => updateFields({ paymentInfo: e.target.value }) }
+                value={ serviceType }
+                onChange={ (e) => updateFields({ serviceType: e.target.value }) }
                 placeholder=''
                 inputProps={{ tabIndex: 1 }}
                 required
@@ -31,4 +31,4 @@ const PaymentInfo = ({ paymentInfo, updateFields }: PaymentInfoProps): JSX.Eleme
   )
 }
 
-export default PaymentInfo
+export default ServiceInfo
